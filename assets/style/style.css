@@ -1,0 +1,248 @@
+@font-face{
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro-Light.ttf");
+}
+/* initialisation 01 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+  }
+  h1{
+    font-size: 3.4rem;
+    font-weight: 200;
+}
+h2{
+    font-size: 2.5rem;
+    font: weight 500;
+    letter-spacing: -1px;
+}
+a, 
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+p{
+    line-height: 36px;
+    margin: 25px 0;
+}
+.button{
+  border: 1px solid #ccc;
+  background: transparent;
+  border-radius: 50px;
+  padding: 13px 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font: 700 0.75rem "Source sans Pro";
+  transition: 0.3s;
+}
+.button:hover, 
+footer a:hover {
+    border: 1px solid rgb(131, 105, 21);
+    color: rgb(131, 105, 21);
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 55px;
+}
+
+  /* initialisation 02 */
+  body {
+    font-family: "Source Sans Pro", sans-serif;
+  }
+
+  /* ****************Section-0**************** */
+  .section-0{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .img{
+    background: url(../images/img-banniere.png) center/cover;
+  }
+
+  /* *****************Section-1 ***************** */
+  .section-1 {
+    display: grid;
+    grid-template-columns: 37% 63%;
+    min-height: 400px;
+}
+.section-1 .img{
+  background: url(../images/img-droite.jpeg) center/cover;
+}
+
+/******************** Section-2 ********************/
+.section-2{
+  display: grid;
+  grid-template-columns: 65% 35%;
+  min-height: 200px;
+}
+.section-2 .img{
+  background: url(../images/img-gauche.jpg) center/cover;
+}
+
+/* ****************** mon menu avec NAV ***************/
+  nav {
+    height: 10vh;
+    background: #5b78c7;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .nav-links li a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+.nav-links:hover,
+li a:hover{
+  border: 1px splid skyblue;
+  color: rgb(173, 152, 29);
+}
+
+
+  /* ****************** le footer réseaux sociaux */
+
+footer {
+  padding: 70px 0 90px;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background: rgb(173, 152, 29);;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+footer a{
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  transition:0.3s;
+
+}
+  /* ****************** Affichage medias **********/
+  @media screen and (max-width: 650px) {
+    .line {
+      width: 30px;
+      height: 3px;
+      background: white;
+      margin: 5px;
+    }
+    nav {
+      position: relative;
+    }
+  
+    .hamburger {
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+    }
+
+    .nav-links {
+      position: fixed;
+      background: #5b78c7;
+      height: 90vh;
+      width: 100vw;
+      flex-direction: column;
+      clip-path: circle(100px at 100% -10%);
+      -webkit-clip-path: circle(100px at 100% -10%);
+      transition: all 0.5s ease-out;
+      pointer-events: none;
+    }
+    .nav-links a{
+      font-size: 1.3em;
+      color: #181818;
+      padding-bottom: 3px;
+      text-decoration: none;
+    }
+    .nav-links.open {
+      clip-path: circle(1000px at 90% -10%);
+      -webkit-clip-path: circle(1000px at 90% -10%);
+      pointer-events: all;
+    }
+
+    .nav-links li a {
+      font-size: 25px;
+    }
+    .nav-links li:nth-child(1) {
+      transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+      transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+      transition: all 0.5s ease 0.6s;
+    }
+    li.fade {
+      opacity: 0.6;
+    }
+
+  /* *************** **media responsive **************/
+header,
+.section-0,
+.section-1,
+.section-2{
+    display: block;
+}
+.section-0{
+  height: auto;
+}
+.section-0 .img{
+  height: 50vh;
+  margin-top: 30px;
+}
+.section-1 .img{
+  height: 50vh;
+  margin-top: 30px;
+}
+.section-2 .img{
+  height: 50vh;
+  margin-top: 30px;
+}
+.container{
+  padding: 15px;
+}
+footer ul {
+  min-width: 200;
+}
+footer a {
+  width: 30px;
+  height: 30px;
+}
+footer i{
+  font-size: 0.7rem;
+}
+
+  }
